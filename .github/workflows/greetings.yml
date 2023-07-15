@@ -43,6 +43,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
+          secrets: |
+            GIT_AUTH_TOKEN=${{ secrets.MYTOKEN }}
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           repository: klovekesh37/githubactionbasic

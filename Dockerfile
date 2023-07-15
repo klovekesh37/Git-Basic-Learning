@@ -1,5 +1,5 @@
 FROM ubuntu
 
-RUN sudo apt-get update
+RUN apt update && apt upgrade
 
 CMD ["echo","helloworld"]

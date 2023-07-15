@@ -32,10 +32,13 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: run the docker container
+        run: docker run hello-world
+
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
           repository: klovekesh37/githubactionbasic
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/image:1.1

@@ -34,3 +34,8 @@ jobs:
           echo test, and deploy your project
       - name: display list of all files and space
         run: ls -lart;df -kh
+      
+      
+      # create the docker image and push to repo
+      -name: Create docker image and push to repo
+       run: |
